@@ -7,9 +7,12 @@ xsetroot
 fontawesome
 libXft
 libXinerama
-```
-### Optional dependencies
-```
+picom
+xclip
+scrot
+dbus
+pipewire
+fontawesome
 iw
 ```
 
@@ -17,7 +20,7 @@ iw
 
 To install run:
 ```
-git clone https://git.sr.ht/~mrawesomeplus/rice
+git clone https://github.com/ambrosiaforest/rice
 cd rice
 make
 doas make install

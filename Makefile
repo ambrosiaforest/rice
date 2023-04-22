@@ -8,7 +8,7 @@ all:
 	cp ./zshrc $(HOME)/.zshrc
 	mkdir -p $(HOME)/.cache/zsh
 	touch $(HOME)/.cache/zsh/history
-	[ ! -d $(HOME)/.local/share/fonts ] && mkdir -p $(HOME)/.local/share/fonts
+	mkdir -p $(HOME)/.local/share/fonts
 	cp ./undefined-medium.ttf $(HOME)/.local/share/fonts
 install:
 	$(MAKE) -C st install

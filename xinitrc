@@ -11,7 +11,7 @@ fi
 xss-lock -- slock &
 
 feh --bg-fill ~/Pictures/wallpapers/forest.jpg &
-picom &
+picom --experimental-backends &
 bar &
 gentoo-pipewire-launcher &
 

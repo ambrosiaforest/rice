@@ -20,7 +20,7 @@ iw
 
 To install run:
 ```
-git clone https://github.com/ambrosiaforest/rice
+git clone https://github.com/ambrosiaforest/rice.git
 cd rice
 make
 doas make install

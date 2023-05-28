@@ -10,6 +10,8 @@ all:
 	touch $(HOME)/.cache/zsh/history
 	mkdir -p $(HOME)/.local/share/fonts
 	cp ./undefined-medium.ttf $(HOME)/.local/share/fonts
+	mkdir -p $(HOME)/.config/picom
+	cp ./picom.conf $(HOME)/.config/picom/
 install:
 	$(MAKE) -C st install
 	$(MAKE) -C dwm install

@@ -1,20 +1,17 @@
 all:
-	git clone https://github.com/ambrosiaforest/dwm
-	git clone https://github.com/ambrosiaforest/st
-	git clone https://github.com/ambrosiaforest/slock
-	git clone https://github.com/ambrosiaforest/dmenu
-	chmod +x ./bar
-	cp ./xinitrc $(HOME)/.xinitrc
-	cp ./zshrc $(HOME)/.zshrc
 	mkdir -p $(HOME)/.cache/zsh
-	touch $(HOME)/.cache/zsh/history
 	mkdir -p $(HOME)/.local/share/fonts
-	cp ./undefined-medium.ttf $(HOME)/.local/share/fonts
 	mkdir -p $(HOME)/.config/picom
-	cp ./picom.conf $(HOME)/.config/picom/
+	mkdir -p $(HOME)/.local/bin/
+	touch $(HOME)/.cache/zsh/history
+	cp ./undefined-medium.ttf $(HOME)/.local/share/fonts
+	cp ./config/picom.conf $(HOME)/.config/picom/
+	cp ./config/xinitrc $(HOME)/.xinitrc
+	cp ./config/zshrc $(HOME)/.zshrc
+	cp ./scripts/bar $(HOME)/.local/bin/
+	cp ./scripts/screenshot $(HOME)/.local/bin/
 install:
-	$(MAKE) -C st install
-	$(MAKE) -C dwm install
-	$(MAKE) -C dmenu install
-	$(MAKE) -C slock install
-	cp ./bar /usr/local/bin/
+	$(MAKE) -C suckless/st install
+	$(MAKE) -C suckless/dwm install
+	$(MAKE) -C suckless/dmenu install
+	$(MAKE) -C suckless/slock install

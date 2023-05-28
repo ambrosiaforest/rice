@@ -9,7 +9,6 @@ libXft
 libXinerama
 picom
 xclip
-scrot
 dbus
 pipewire
 fontawesome

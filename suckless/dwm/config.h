@@ -6,8 +6,8 @@ static const unsigned int gappx     = 10;        /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "monospace:size=14", "fontawesome:size=14" };
-static const char dmenufont[]       = "monospace:size=14";
+static const char *fonts[]          = { "undefined:size=13" };
+static const char dmenufont[]       = "undefined:size=13";
 static unsigned int baralpha		= 0xd0;
 static unsigned int borderalpha		= OPAQUE;
 static const char col_gray1[]       = "#222222";
@@ -68,9 +68,6 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_purple, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "st", NULL };
-static const char *volupcmd[] = { "wpctl", "set-volume", "@DEFAULT_SINK@", "5%+", NULL };
-static const char *voldowncmd[] = { "wpctl", "set-volume", "@DEFAULT_SINK@", "5%-", NULL };
-static const char *volmutecmd[] = { "wpctl", "set-mute", "@DEFAULT_SINK@", "toggle", NULL };
 
 
 static const Key keys[] = {
@@ -112,11 +109,6 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_8,                           7)
 	TAGKEYS(                        XK_9,                           8)
 	{ MODKEY|ShiftMask,             XK_q,	   quit,		        {0} },
-
-	/* custom binds */
-    { 0,			    XF86XK_AudioRaiseVolume, spawn, {.v = volupcmd } },
-    { 0,			    XF86XK_AudioLowerVolume, spawn, {.v = voldowncmd } },
-    { 0,			    XF86XK_AudioMute, spawn,	    {.v = volmutecmd } },
 };
 
 

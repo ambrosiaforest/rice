@@ -61,44 +61,44 @@ static const Layout layouts[] = {
 /* helper for spawning shell commands in the pre dwm-5.0 fashion */
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
+/* import XF86keysym */
+#include <X11/XF86keysym.h>
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_purple, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "st", NULL };
-static const char *scrotcmd[] = { "/bin/sh", "-c", "scrot -f '/tmp/clipboard.png' -o -s -e 'xclip -selection clipboard -t image/png -i $f'", NULL};
 
-#include <X11/XF86keysym.h>
+
 static const Key keys[] = {
-	/* modifier                     key         function            argument */
-	{ MODKEY,                       XK_d,       spawn,              {.v = dmenucmd } },
-	{ MODKEY,                       XK_Return,  spawn,              {.v = termcmd } },
-    { 0,                            XK_Print,   spawn,              {.v = scrotcmd } },
-	{ MODKEY,                       XK_b,       togglebar,          {0} },
-	{ MODKEY,                       XK_j,       focusstack,         {.i = +1 } },
-	{ MODKEY,                       XK_k,       focusstack,         {.i = -1 } },
-	{ MODKEY,                       XK_u,       incnmaster,         {.i = +1 } },
-	{ MODKEY,                       XK_i,       incnmaster,         {.i = -1 } },
-	{ MODKEY,                       XK_h,       setmfact,           {.f = -0.05} },
-	{ MODKEY,                       XK_l,       setmfact,           {.f = +0.05} },
-	{ MODKEY|ShiftMask,             XK_Return,  zoom,               {0} },
-	{ MODKEY,                       XK_Tab,     view,               {0} },
-	{ MODKEY,                       XK_q,       killclient,         {0} },
-	{ MODKEY,                       XK_t,       setlayout,          {.v = &layouts[0]} },
-	{ MODKEY,                       XK_f,       setlayout,          {.v = &layouts[1]} },
-	{ MODKEY,                       XK_m,       setlayout,          {.v = &layouts[2]} },
-	{ MODKEY,                       XK_space,   setlayout,          {0} },
-	{ MODKEY|ShiftMask,             XK_space,   togglefloating,     {0} },
-	{ MODKEY,                       XK_0,       view,               {.ui = ~0 } },
-	{ MODKEY|ShiftMask,             XK_0,       tag,                {.ui = ~0 } },
-	{ MODKEY,                       XK_comma,   focusmon,           {.i = -1 } },
-	{ MODKEY,                       XK_period,  focusmon,           {.i = +1 } },
-	{ MODKEY|ShiftMask,             XK_comma,   tagmon,             {.i = -1 } },
-	{ MODKEY|ShiftMask,             XK_period,  tagmon,             {.i = +1 } },
-	{ MODKEY,                       XK_minus,   setgaps,            {.i = -1 } },
-	{ MODKEY,                       XK_equal,   setgaps,            {.i = +1 } },
-	{ MODKEY|ShiftMask,             XK_equal,   setgaps,            {.i = 0  } },
-    { MODKEY|ShiftMask,             XK_f,       togglefullscr,      {0} },
+	/* modifier                     key        function             argument */
+	{ MODKEY,                       XK_d,      spawn,               {.v = dmenucmd } },
+	{ MODKEY,                       XK_Return, spawn,               {.v = termcmd } },
+	{ MODKEY,                       XK_b,      togglebar,           {0} },
+	{ MODKEY,                       XK_j,      focusstack,          {.i = +1 } },
+	{ MODKEY,                       XK_k,      focusstack,          {.i = -1 } },
+	{ MODKEY,                       XK_u,      incnmaster,          {.i = +1 } },
+	{ MODKEY,                       XK_i,      incnmaster,          {.i = -1 } },
+	{ MODKEY,                       XK_h,      setmfact,            {.f = -0.05} },
+	{ MODKEY,                       XK_l,      setmfact,            {.f = +0.05} },
+	{ MODKEY|ShiftMask,             XK_Return, zoom,                {0} },
+	{ MODKEY,                       XK_Tab,    view,                {0} },
+	{ MODKEY,                       XK_q,      killclient,          {0} },
+	{ MODKEY,                       XK_t,      setlayout,           {.v = &layouts[0]} },
+	{ MODKEY,                       XK_f,      setlayout,           {.v = &layouts[1]} },
+	{ MODKEY,                       XK_m,      setlayout,           {.v = &layouts[2]} },
+	{ MODKEY,                       XK_space,  setlayout,           {0} },
+	{ MODKEY|ShiftMask,             XK_space,  togglefloating,      {0} },
+	{ MODKEY,                       XK_0,      view,                {.ui = ~0 } },
+	{ MODKEY|ShiftMask,             XK_0,      tag,                 {.ui = ~0 } },
+	{ MODKEY,                       XK_comma,  focusmon,            {.i = -1 } },
+	{ MODKEY,                       XK_period, focusmon,            {.i = +1 } },
+	{ MODKEY|ShiftMask,             XK_comma,  tagmon,              {.i = -1 } },
+	{ MODKEY|ShiftMask,             XK_period, tagmon,              {.i = +1 } },
+        { MODKEY|ShiftMask,             XK_f,      togglefullscr,       {0} },
+	{ MODKEY,                       XK_minus,  setgaps,             {.i = -1 } },
+	{ MODKEY,                       XK_equal,  setgaps,             {.i = +1 } },
+	{ MODKEY|ShiftMask,             XK_equal,  setgaps,             {.i = 0  } },
 	TAGKEYS(                        XK_1,                           0)
 	TAGKEYS(                        XK_2,                           1)
 	TAGKEYS(                        XK_3,                           2)
@@ -108,7 +108,7 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_7,                           6)
 	TAGKEYS(                        XK_8,                           7)
 	TAGKEYS(                        XK_9,                           8)
-	{ MODKEY|ShiftMask,             XK_q,	    quit,		        {0} },
+	{ MODKEY|ShiftMask,             XK_q,	   quit,		        {0} },
 };
 
 

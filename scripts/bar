@@ -9,7 +9,7 @@ wlan() {
 		wifiicon=""
 	fi
 
-	echo "$ssid"
+	echo "$wifiicon$ssid"
 }
 
 
@@ -36,7 +36,7 @@ volume() {
 		* ) echo  && exit ;;
 	esac
 	
-	echo "$vol%"
+	echo "$icon$vol%"
 }
 
 battery() {
@@ -52,20 +52,14 @@ battery() {
 
 		icon_battery=""
 
-		echo "$percent%"
+		echo "$icon_battery$icon_status$percent%"
 	done
 }
-
-obsd_battery() {
-    echo "$(apm | awk '/Battery/ { print $4 }')"
-
-}
-
 
 clock() {
 	echo "$(date '+%a %b %d %T')"
 }
 
 while true; do
-	xsetroot -name "$(clock)" && sleep 1
+	xsetroot -name "$(wlan) $(volume) $(battery) $(clock)" && sleep 1
 done

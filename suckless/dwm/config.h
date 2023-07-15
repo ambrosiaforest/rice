@@ -69,9 +69,9 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_purple, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "st", NULL };
 static const char *scrotcmd[] = { "/bin/sh", "-c", "scrot -f '/tmp/clipboard.png' -o -s -e 'xclip -selection clipboard -t image/png -i $f'", NULL};
-static const char *volupcmd[] = { "pactl", "--", "set-sink-volume", "0", "+5%", NULL };
-static const char *voldowncmd[] = { "pactl", "--", "set-sink-volume", "0", "-5%", NULL };
-static const char *volmutecmd[] = { "pactl", "--", "set-sink-mute", "0", "toggle", NULL };
+static const char *volupcmd[] = { "wpctl", "set-volume", "@DEFAULT_SINK@", "5%+", NULL };
+static const char *voldowncmd[] = { "wpctl", "set-volume", "@DEFAULT_SINK@","5%-", NULL };
+static const char *volmutecmd[] = { "wpctl", "set-mute", "@DEFAULT_SINK@", "toggle", NULL };
 
 #include <X11/XF86keysym.h>
 static const Key keys[] = {
@@ -117,6 +117,9 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_8,                           7)
 	TAGKEYS(                        XK_9,                           8)
 	{ MODKEY|ShiftMask,             XK_q,	    quit,		        {0} },
+    { 0,                            XF86XK_AudioRaiseVolume, spawn, {.v = volupcmd } },
+    { 0,                            XF86XK_AudioLowerVolume, spawn, {.v = voldowncmd } },
+    { 0,                            XF86XK_AudioMute, spawn,        {.v = volmutecmd } },
 };
 
 

@@ -1,15 +1,15 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx  = 1;        /* border pixel of windows */
+static const unsigned int borderpx  = 3;        /* border pixel of windows */
 static const unsigned int gappx     = 10;        /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const int horizpadbar        = 0;        /* horizontal padding for statusbar */
-static const int vertpadbar         = 10;        /* vertical padding for statusbar */
-static const char *fonts[]          = { "undefined-medium:size=13" };
-static const char dmenufont[]       = "undefined-medium:size=13";
+static const int vertpadbar         = 0;        /* vertical padding for statusbar */
+static const char *fonts[]          = { "undefined-medium:size=14" };
+static const char dmenufont[]       = "undefined-medium:size=14";
 static unsigned int baralpha		= 0xd0;
 static unsigned int borderalpha		= OPAQUE;
 static const char col_gray1[]       = "#222222";

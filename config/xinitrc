@@ -3,4 +3,4 @@ feh --bg-fill --no-fehbg ~/Pictures/wallpapers/bg.jpg &
 picom --backend glx --vsync --unredir-if-possible -f -b &
 bar &
 gentoo-pipewire-launcher &
-exec dbus-launch --sy-syntax --exit-with-session dwm >/dev/null 2>&1
+exec dbus-launch --sh-syntax --exit-with-session dwm >/dev/null 2>&1

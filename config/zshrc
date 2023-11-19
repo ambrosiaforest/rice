@@ -7,6 +7,9 @@ HISTSIZE=10000000
 SAVEHIST=10000000
 HISTFILE=~/.cache/zsh/history
 
+# Add ~/.local/bin/ to PATH
+PATH="$PATH:$HOME/.local/bin/"
+
 # Set aliases
 alias cp="cp -r"
 alias shutdown="doas shutdown"

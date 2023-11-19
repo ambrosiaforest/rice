@@ -7,6 +7,7 @@ all:
 	touch $(HOME)/.cache/zsh/history
 	cp ./undefined-medium.ttf $(HOME)/.local/share/fonts
 	cp ./config/xinitrc $(HOME)/.xinitrc
+	cp ./config/vimrc $(HOME)/.vimrc
 	cp ./config/zshrc $(HOME)/.zshrc
 	cp ./scripts/bar $(HOME)/.local/bin/
 	cp ./bg.jpg $(HOME)/Pictures/wallpapers/

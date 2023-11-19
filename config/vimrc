@@ -8,7 +8,7 @@ filetype indent on
 syntax on
 
 set number relativenumber
-set clipboard+=unnamedplus
+set clipboard=unnamedplus
 set title
 
 set shiftwidth=4
@@ -22,6 +22,7 @@ set nohlsearch
 set ignorecase
 set smartcase
 set showmode
+set guicursor=
 
 set wildmenu
 set wildmode=list:longest

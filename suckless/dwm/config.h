@@ -35,6 +35,7 @@ static const Rule rules[] = {
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "Gimp",     NULL,       NULL,        0,            1,           -1 },
+    { "icecat",  NULL,       "Picture-in-Picture",         0,       1,      -1 },
 	{ NULL,      NULL,     "Event Tester", 0,            0,           -1 },
 	
 };
@@ -99,6 +100,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_equal,   setgaps,            {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_equal,   setgaps,            {.i = 0  } },
     { MODKEY|ShiftMask,             XK_f,       togglefullscr,      {0} },
+    { MODKEY,                       XK_s,       togglesticky,       {0} },
 	TAGKEYS(                        XK_1,                           0)
 	TAGKEYS(                        XK_2,                           1)
 	TAGKEYS(                        XK_3,                           2)

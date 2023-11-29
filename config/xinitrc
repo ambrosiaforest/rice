@@ -1,6 +1,14 @@
 #!/bin/sh
-feh --bg-fill --no-fehbg ~/Pictures/wallpapers/bg.jpg &
-picom --backend glx --vsync --unredir-if-possible -f -b &
+gnome-keyring-daemon --start --components=secrets &
+if command -v dbus-launch > /dev/null && test -z "${DBUS_SESSION_BUS_ADDRESS}"
+then
+ 	eval $(dbus-launch --sh-syntax --exit-with-session)
+fi
+
+~/.fehbg &
+picom &
+dunst &
 bar &
 gentoo-pipewire-launcher &
-exec dbus-launch --sh-syntax --exit-with-session dwm >/dev/null 2>&1
+
+exec dwm

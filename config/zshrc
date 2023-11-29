@@ -26,3 +26,4 @@ _comp_options+=(globdots)
 
 # Set prompt
 PS1="%F{magenta}%n@%m%f %F{blue}%~%f %F{magenta}$%f "
+[ $(tty) = "/dev/tty1" ] && exec startx

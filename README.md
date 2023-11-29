@@ -4,22 +4,21 @@ xorg-server
 zsh
 xinit
 xsetroot
-fontawesome
 libXft
 libXinerama
 picom
 xclip
 dbus
 pipewire
-fontawesome
-iw
+gnome-keyring (for nheko)
+
 ```
 
 ## Installation
 
 To install run:
 ```
-git clone https://github.com/ambrosiaforest/rice.git
+git clone --recursive https://github.com/ambrosiaforest/rice.git
 cd rice
 make
 doas make install

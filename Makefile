@@ -9,6 +9,7 @@ all:
 	cp ./config/xinitrc $(HOME)/.xinitrc
 	cp ./config/vimrc $(HOME)/.vimrc
 	cp ./config/zshrc $(HOME)/.zshrc
+	cp ./config/picom $(HOME)/.config/picom/picom.conf
 	cp ./scripts/bar $(HOME)/.local/bin/
 	cp ./bg.jpg $(HOME)/Pictures/wallpapers/
 install:

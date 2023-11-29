@@ -1,10 +1,4 @@
 #!/bin/sh
-obsd_battery() {
-    echo "$(apm | awk '/Battery/ { print $4 }')"
-
-}
-
-
 clock() {
 	echo "$(date '+%a %b %d %H:%M')"
 }

@@ -1,6 +1,6 @@
 [submodule "suckless/dwm"]
 	path = suckless/dwm
-	url = git@github.com:ambrosiaforest/dwm.git
+	url = https://github.com/ambrosiaforest/dwm.git
 [submodule "suckless/st"]
 	path = suckless/st
-	url = git@github.com:ambrosiaforest/st.git
+	url = https://github.com/ambrosiaforest/st.git

@@ -1,14 +1,12 @@
 #!/bin/zsh
-setopt autocd     # Automatically cd into typed directory.
-stty stop undef       # Disable ctrl-s to freeze terminal.
+setopt autocd
+stty stop undef
 
 # Enables history
 HISTSIZE=10000000
 SAVEHIST=10000000
-HISTFILE=~/.cache/zsh/history
+HISTFILE=$XDG_CACHE_HOME/zsh/history
 
-# Add ~/.local/bin/ to PATH
-PATH="$PATH:$HOME/.local/bin/"
 
 # Set aliases
 alias cp="cp -r"
@@ -26,4 +24,3 @@ _comp_options+=(globdots)
 
 # Set prompt
 PS1="%F{magenta}%n@%m%f %F{blue}%~%f %F{magenta}$%f "
-[ $(tty) = "/dev/tty1" ] && exec startx

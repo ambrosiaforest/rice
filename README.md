@@ -18,8 +18,7 @@ gnome-keyring (for nheko)
 
 To install run:
 ```
-git clone --recursive https://github.com/ambrosiaforest/rice.git
+git clone https://github.com/ambrosiaforest/rice.git
 cd rice
-make
-doas make install
+./install.sh
 ```

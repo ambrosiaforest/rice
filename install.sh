@@ -1,4 +1,4 @@
-source ./config/shell/profile
+. ./config/shell/profile
 mkdir -p $XDG_CONFIG_HOME/
 mkdir -p ~/.local/bin/
 mkdir -p ~/.local/share/fonts
